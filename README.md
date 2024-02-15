@@ -1,1 +1,1 @@
-# langchain-001
+# LangChain を使ったサンプルアプリケーション
