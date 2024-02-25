@@ -11,6 +11,9 @@ python-dotenv = "^1.0.1"
 openai = "^1.12.0"
 langchain = "0.1.6"
 langchain-openai = "^0.0.6"
+unstructured = "^0.12.4"
+chromadb = "^0.4.22"
+slack-bolt = "^1.18.1"
 
 [tool.poetry.dev-dependencies]
 
