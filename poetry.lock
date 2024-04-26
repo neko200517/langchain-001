@@ -249,6 +249,23 @@ test = ["contourpy", "matplotlib", "pillow"]
 test-no-images = ["pytest", "pytest-cov", "pytest-xdist", "wurlitzer"]
 
 [[package]]
+name = "curl-cffi"
+version = "0.6.1"
+description = "libcurl ffi bindings for Python, with impersonation support"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+certifi = "*"
+cffi = ">=1.12.0"
+
+[package.extras]
+build = ["cibuildwheel", "wheel"]
+dev = ["autoflake (==1.4)", "coverage (==6.4.1)", "cryptography (==38.0.3)", "flake8 (==6.0.0)", "flake8-bugbear (==22.7.1)", "flake8-pie (==0.15.0)", "httpx (==0.23.1)", "mypy (==0.971)", "types-certifi (==2021.10.8.2)", "pytest (==7.1.2)", "pytest-asyncio (==0.19.0)", "pytest-trio (==0.7.0)", "trio (==0.21.0)", "trio-typing (==0.7.0)", "trustme (==0.9.0)", "uvicorn (==0.18.3)", "websockets (==11.0.3)", "ruff (==0.1.14)", "nest-asyncio (==1.6.0)"]
+test = ["cryptography (==38.0.3)", "httpx (==0.23.1)", "types-certifi (==2021.10.8.2)", "pytest (==7.1.2)", "pytest-asyncio (==0.19.0)", "pytest-trio (==0.7.0)", "trio (==0.21.0)", "trio-typing (==0.7.0)", "trustme (==0.9.0)", "uvicorn (==0.18.3)", "proxy.py (==2.4.3)", "websockets (==11.0.3)", "python-multipart (==0.0.6)", "fastapi (==0.100.0)", "nest-asyncio (==1.6.0)"]
+
+[[package]]
 name = "cycler"
 version = "0.12.1"
 description = "Composable style cycles"
@@ -299,6 +316,22 @@ description = "DuckDB in-process database"
 category = "main"
 optional = false
 python-versions = ">=3.7.0"
+
+[[package]]
+name = "duckduckgo-search"
+version = "4.5.0"
+description = "Search for words, documents, images, news, maps and text translation using the DuckDuckGo.com search engine."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+click = ">=8.1.7"
+curl-cffi = ">=0.6.1"
+lxml = ">=5.1.0"
+
+[package.extras]
+dev = ["ruff (>=0.2.2)", "pytest (>=8.0.1)"]
 
 [[package]]
 name = "emoji"
@@ -789,6 +822,20 @@ tenacity = ">=8.1.0,<9.0.0"
 
 [package.extras]
 extended-testing = ["jinja2 (>=3,<4)"]
+
+[[package]]
+name = "langchain-experimental"
+version = "0.0.39"
+description = "Building applications with LLMs through composability"
+category = "main"
+optional = false
+python-versions = ">=3.8.1,<4.0"
+
+[package.dependencies]
+langchain = ">=0.0.308"
+
+[package.extras]
+extended-testing = ["faker (>=19.3.1,<20.0.0)", "presidio-analyzer (>=2.2.33,<3.0.0)", "presidio-anonymizer (>=2.2.33,<3.0.0)", "sentence-transformers (>=2,<3)", "vowpal-wabbit-next (==0.6.0)"]
 
 [[package]]
 name = "langchain-openai"
@@ -1751,7 +1798,7 @@ cffi = ["cffi (>=1.11)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.11.3"
-content-hash = "5a29acad8ec0761c462bcad80fbf93bee83d7edff87b8770dd1429c5c46136e6"
+content-hash = "12d6544886e5f84f32a539d3890d7abbc1c18c7db5a65b987538997d814a0633"
 
 [metadata.files]
 aiofiles = [
@@ -2144,6 +2191,15 @@ contourpy = [
     {file = "contourpy-1.2.0-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:0d7e03c0f9a4f90dc18d4e77e9ef4ec7b7bbb437f7f675be8e530d65ae6ef956"},
     {file = "contourpy-1.2.0.tar.gz", hash = "sha256:171f311cb758de7da13fc53af221ae47a5877be5a0843a9fe150818c51ed276a"},
 ]
+curl-cffi = [
+    {file = "curl_cffi-0.6.1-cp38-abi3-macosx_10_9_x86_64.whl", hash = "sha256:d92e946afca5e6ddbdc007d3b8815cd77fed69879406eb8d94bce5ec43ee64eb"},
+    {file = "curl_cffi-0.6.1-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:c8b01bf3d01693c4e61679e27b1581036639cf8e8bb0d7026bd77e916f5c75ce"},
+    {file = "curl_cffi-0.6.1-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:f3030de18de2ab0f3af18a50b7e9465701d582be62a6c21d67008549b592bed4"},
+    {file = "curl_cffi-0.6.1-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2aada7ef565826bbac351e2dcb55360f849d970193e6fdbbe337680bd5605bb7"},
+    {file = "curl_cffi-0.6.1-cp38-abi3-win32.whl", hash = "sha256:7225921efaee08efca9a72f18c03f0bc6614dd69414bdab104f4fd8d508aa277"},
+    {file = "curl_cffi-0.6.1-cp38-abi3-win_amd64.whl", hash = "sha256:6cfffe3b012467f37f6dd979318106f955f4866c6f0bd55a93044e697b475647"},
+    {file = "curl_cffi-0.6.1.tar.gz", hash = "sha256:e3091ee765f6d9522d16f723f224dd159257d6f36ee8314979d60084c339695e"},
+]
 cycler = [
     {file = "cycler-0.12.1-py3-none-any.whl", hash = "sha256:85cef7cff222d8644161529808465972e51340599459b8ac3ccbac5a854e0d30"},
     {file = "cycler-0.12.1.tar.gz", hash = "sha256:88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c"},
@@ -2208,6 +2264,10 @@ duckdb = [
     {file = "duckdb-0.10.0-cp39-cp39-musllinux_1_1_x86_64.whl", hash = "sha256:4487d0df221b17ea4177ad08131bc606b35f25cfadf890987833055b9d10cdf6"},
     {file = "duckdb-0.10.0-cp39-cp39-win_amd64.whl", hash = "sha256:c099ae2ff8fe939fda62da81704f91e2f92ac45e48dc0e37c679c9d243d01e65"},
     {file = "duckdb-0.10.0.tar.gz", hash = "sha256:c02bcc128002aa79e3c9d89b9de25e062d1096a8793bc0d7932317b7977f6845"},
+]
+duckduckgo-search = [
+    {file = "duckduckgo_search-4.5.0-py3-none-any.whl", hash = "sha256:0057aee08d0f60bbb69b438b65e771c920cae46a5996f6682fffee38948f6930"},
+    {file = "duckduckgo_search-4.5.0.tar.gz", hash = "sha256:36dd819cf45de7099c7311b17215933b80be74f2f8fdc8595b52d6ac01e23fc2"},
 ]
 emoji = [
     {file = "emoji-2.10.1-py2.py3-none-any.whl", hash = "sha256:11fb369ea79d20c14efa4362c732d67126df294a7959a2c98bfd7447c12a218e"},
@@ -2641,6 +2701,10 @@ langchain-community = [
 langchain-core = [
     {file = "langchain_core-0.1.23-py3-none-any.whl", hash = "sha256:d42fac013c39a8b0bcd7e337a4cb6c17c16046c60d768f89df582ad73ec3c5cb"},
     {file = "langchain_core-0.1.23.tar.gz", hash = "sha256:34359cc8b6f8c3d45098c54a6a9b35c9f538ef58329cd943a2249d6d7b4e5806"},
+]
+langchain-experimental = [
+    {file = "langchain_experimental-0.0.39-py3-none-any.whl", hash = "sha256:d4f2ed3f2ce7ea29dff07dd751af0fd84d43f5c61ea109c7d7e3a65c7538c6fe"},
+    {file = "langchain_experimental-0.0.39.tar.gz", hash = "sha256:b198fb69d89841ed7465a63e2823cf33c8879337917e27df48e2797b29ca60d5"},
 ]
 langchain-openai = [
     {file = "langchain_openai-0.0.6-py3-none-any.whl", hash = "sha256:2ef040e4447a26a9d3bd45dfac9cefa00797ea58555a3d91ab4f88699eb3a005"},
